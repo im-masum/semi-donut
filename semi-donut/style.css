@@ -1,0 +1,71 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: " Arial ", sans-serif;
+    box-sizing: border-box;
+
+}
+body{
+    display: flex;
+    width: 100%;
+    height: 80vh;
+    background: #333;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding: 2em;
+    margin: 2em;
+} 
+    .tittle{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 130px;
+}
+.tittle h3{
+    font-weight: 200;
+}
+.tittle span{
+    font-size: 28px;
+    color: #b0a8a8;
+}
+.tittle p{
+    color: #b0a8a8;
+} 
+.semi-donut{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 500px;
+    height: 250px;
+    margin: 10px;
+    color: #fff;
+    font-size: 36px;
+    overflow: hidden;
+    --percentage: 0;
+    --fill: rgb(0, 187, 255);
+
+    &::after{
+        content: "";
+        position: absolute;
+        box-sizing: border-box;
+        left: 0;
+        top: 0; 
+        width: 500px;
+        height: 500px;
+        border: 40px solid;
+        border-radius: 50%;
+        border-color: #444 #444 var(--fill) var(--fill);
+        transform: rotate( calc(1deg * (-45 + var(--percentage) * 1.8)));
+        animation: fillAnimation 2.5s ease-in;
+    }
+    
+}
+
+@keyframes fillAnimation{
+    0%{ transform:rotate(-45deg) }
+    50%{ transform:rotate(135deg) }
+}
